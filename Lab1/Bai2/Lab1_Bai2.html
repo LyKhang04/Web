@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+  <style>
+    html, body{
+      margin: 0;
+      padding: 0;
+    }
+    .container{
+      min-height: 500px;
+      width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .container > div{
+      font-weight: bolder;
+      text-align: center;
+      border: solid 1px gray;
+    }
+    .header{
+      height: 80px;
+    }
+    .nav{
+      height: 50px;
+    }
+    .content{
+      min-height: 300px;
+    }
+    .left{
+        float: left;
+        width: calc(30% - 2px);
+        border: solid 1px gray;
+        height: 298px;
+    }
+    .right{
+        float: right;
+        width: calc(70% - 2px);
+        border: solid 1px gray;
+        height: 298px;
+    }
+    .footer{
+    height: 80px;
+    }
+  </style>
+</head>
+<body>
+    <div class ="container">
+      <div class="header">Header Section</div>
+      <div class="nav">Navigation Bar</div>
+      <div class="content">
+        <div class="left">Index</div>
+        <div class="right">Content Section</div>
+      </div>
+      <div class="footer">Footer Section</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 1 Bài 1</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            min-height: auto;
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: double;
+            border-width: 5px ;
+        }
+        .container > div {
+            border: solid 1px gray;
+        }
+        .ProcessLayout {
+            font-weight: bolder;
+            height: 80px;
+            background-color: darkgray;
+            text-align: left;
+            font-size: 40px;
+            border-style: solid;
+            border-width: 5px ;
+        }
+        .content {
+            display: flex;
+            border-style: double;
+      
+        }
+        .left {
+            text-align: left;
+            width: 30%;
+            background-color:wheat;
+            box-sizing: border-box;
+            border-style: double;
+    
+        }
+        .left .main {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .left a {
+            display: block;
+            text-decoration: none;
+        }
+        .right {
+            width: 70%;
+            box-sizing: border-box;
+            border-left: 1px solid gray;
+            text-align: left;
+            border-style: double;
+    
+        }
+        .www {
+            text-align: center;
+            height: 20px;
+            background-color: darkgray;
+            font-size: 14px;
+            border-style: double;
+      
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ProcessLayout">Process Layout Example</div>
+        <div class="content">
+            <div class="left">
+                <div class="main">Main Menu</div>
+                <div class="one">Link one</div>
+                <div class="two">Link two</div>
+                <div class="three">Link three</div>
+                <div class="four">Link four</div>
+            </div>
+            <div class="right">This is an example layout using the tables</div>
+        </div>
+        <div class="www">www.Example of layout using tables.com</div>
+    </div>
+</body>
+</html>
