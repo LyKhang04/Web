@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phan 1</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .container .btn-group {
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container .btn-group .btn-item {
+        padding: 20px;
+      }
+
+      .btn {
+        padding: 20px 40px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .ptb2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+
+      .ptb2 .text {
+        font-size: 20px;
+      }
+
+      .ep4 {
+        margin: 12px;
+        text-align: center;
+        border-radius: 5px;
+      }
+
+      input {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        width: 26%;
+        margin: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- bai 1 -->
+      <div class="btn-group">
+        <div class="btn-item">
+          <button
+            type="button"
+            class="btn"
+            style="background-color: red"
+            onclick="getColor(this)"
+          >
+            Button 1
+          </button>
+        </div>
+        <div class="btn-item">
+          <button
+            type="button"
+            class="btn"
+            style="background-color: blue"
+            onclick="getColor(this)"
+          >
+            Button 2
+          </button>
+        </div>
+        <div class="btn-item">
+          <button
+            type="button"
+            class="btn"
+            style="background-color: white"
+            onclick="getColor(this)"
+          >
+            Button 3
+          </button>
+        </div>
+      </div>
+
+      <!-- bai 2 -->
+      <div class="ptb2">
+        <h2 style="margin: 8px 0px">Kết quả giải phương trình bậc II:</h2>
+        <p class="text" id="result"></p>
+      </div>
+
+      <div class="ep4">
+        <textarea style="border-radius: 5px" rows="10" cols="50"></textarea>
+        <br />
+        <input
+          class="content"
+          type="text"
+          value=""
+          style="background-color: burlywood"
+        />
+        <br />
+        <input
+          type="button"
+          value="Submit"
+          style="background-color: cadetblue"
+          onclick="numOfOccurrent(this)"
+        />
+      </div>
+    </div>
+
+    <!--  -->
+    <script>
+      // bai 1
+      function getColor(x) {
+        let bg_color = x.style.backgroundColor;
+        let container = document.querySelector("body");
+        container.style.backgroundColor = bg_color;
+      }
+
+      // bai 2
+      function giaiPhuongTrinh(a, b, c) {
+        let result = "";
+
+        let delta = b * b - 4 * a * c;
+
+        result += `Phương trình: ${a}x² + ${b}x + ${c} = 0<br>`;
+
+        // Tính nghiệm
+        if (delta < 0) {
+          result += "Phương trình vô nghiệm.";
+        } else if (delta === 0) {
+          let x = -b / (2 * a);
+          result += `Phương trình có nghiệm kép: x = ${x}`;
+        } else {
+          let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+          let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+          result += `Phương trình có hai nghiệm phân biệt: x₁ = ${x1}, x₂ = ${x2}`;
+        }
+
+        // Hiển thị kết quả lên trang web
+        document.getElementById("result").innerHTML = result;
+      }
+      giaiPhuongTrinh(1, -3, 2);
+
+      // bai 3
+      //   alert("Hello user name");
+
+      // bai 4
+      function numOfOccurrent(x) {
+        let textAreaVal = x.parentElement.querySelector("textarea").value;
+        let inputVal = x.parentElement.querySelector(".content").value;
+        let text = [`${textAreaVal}`];
+
+        let count = 0;
+        let pos = textAreaVal.indexOf(inputVal);
+
+        while (pos !== -1) {
+          count++;
+          pos = textAreaVal.indexOf(inputVal, pos + 1);
+        }
+        console.log(count);
+      }
+    </script>
+  </body>
+</html>

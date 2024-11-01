@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 20%;
+  margin: auto;
+}
+
+.picture {
+  display: flex;
+}
+
+.btn-64 .grid-8-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 10px;
+  margin: 20px 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-64 .btn,
+.btn-64 .btn-alert {
+  width: 100%;
+  padding: 1rem;
+  background-color: antiquewhite;
+  border: none;
+  border-radius: 5px;
+}
